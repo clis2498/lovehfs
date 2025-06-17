@@ -1,3 +1,4 @@
+// Existing code in script.js
 document.addEventListener('DOMContentLoaded', () => {
     // Scroll animations for story sections
     const sections = document.querySelectorAll('.story-section');
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Music toggle function
+// Existing music toggle function
 function toggleMusic() {
     const music = document.getElementById('background-music');
     const button = document.querySelector('.music-toggle');
