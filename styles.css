@@ -105,9 +105,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Equal width columns */
     gap: 20px;
-    max-width: 600px;
+    max-width: 600px; /* Reduced from 1000px to ~60% */
     margin: 0 auto;
-    align-items: start; /* Stretch items to align tops and bottoms */
+    align-items: stretch; /* Stretch items to align tops and bottoms */
 }
 
 .gallery-grid img.landscape {
@@ -151,6 +151,7 @@ body {
     .gallery-grid {
         grid-template-columns: 1fr; /* Single column for tablets and mobile */
         gap: 15px;
+        max-width: 360px; /* Reduced proportionally for smaller screens */
     }
 
     .gallery-grid img.landscape,
@@ -166,6 +167,7 @@ body {
 @media (max-width: 480px) {
     .gallery-grid {
         gap: 10px;
+        max-width: 300px; /* Further reduced for mobile */
     }
 
     .gallery-grid img {
