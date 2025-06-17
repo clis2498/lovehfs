@@ -100,14 +100,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* Replace the existing .gallery-grid and add new styles in styles.css */
+/* Replace the existing .gallery-grid and related styles in styles.css */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Left column wider for two landscape images, right for one portrait */
+    grid-template-columns: 1fr 1fr; /* Equal width columns */
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
-    align-items: start; /* Align images to the top */
+    align-items: stretch; /* Stretch items to align tops and bottoms */
 }
 
 .gallery-grid img.landscape {
@@ -131,18 +131,19 @@ body {
 }
 
 /* Stack landscape images vertically in the left column */
-.gallery-grid img.landscape:nth-child(1),
-.gallery-grid img.landscape:nth-child(2) {
+.gallery-grid img.landscape:nth-child(1) {
     grid-column: 1;
+    grid-row: 1; /* First landscape at the top */
 }
 
 .gallery-grid img.landscape:nth-child(2) {
-    margin-top: 20px; /* Space between stacked landscape images */
+    grid-column: 1;
+    grid-row: 2; /* Second landscape below */
 }
 
 .gallery-grid img.portrait {
     grid-column: 2;
-    grid-row: 1 / span 2; /* Span both rows for the portrait image */
+    grid-row: 1 / span 2; /* Portrait spans both rows to align top and bottom */
 }
 
 /* Responsive Design */
@@ -154,9 +155,9 @@ body {
 
     .gallery-grid img.landscape,
     .gallery-grid img.portrait {
-        grid-column: auto; /* Reset to default column */
-        grid-row: auto; /* Reset to default row */
-        margin-top: 0; /* Remove extra margin */
+        grid-column: auto;
+        grid-row: auto;
+        margin-top: 0;
         max-width: 100%;
         aspect-ratio: auto; /* Allow natural image aspect ratios */
     }
