@@ -103,7 +103,7 @@ body {
 /* Replace the existing .gallery-grid and add new styles in styles.css */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Left column wider for two landscape images, right for one portrait */
+    grid-template-columns: 1fr 1fr; /* Left column wider for two landscape images, right for one portrait */
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
